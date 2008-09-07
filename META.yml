@@ -1,0 +1,41 @@
+---
+name: File-Corresponding
+version: 0.001
+author:
+  - 'Johan Lindström <johanl[ÄT]DarSerMan.com>'
+abstract: Find corresponding files in the directory tree
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  Carp: 0
+  Data::Dumper: 0
+  File::Basename: 0
+  File::HomeDir: 0
+  Getopt::Long: 0
+  List::MoreUtils: 0
+  Moose: 0.57
+  Moose::Autobox: 0.08
+  MooseX::Types::Path::Class: 0
+  Path::Class: 0.11
+  Pod::Usage: 0
+  Test::Differences: 0
+  Test::Exception: 0
+  Test::More: 0
+  YAML::Tiny: 0
+provides:
+  Config::Find:
+    file: lib/Config/Find.pm
+  File::Corresponding:
+    file: lib/File/Corresponding.pm
+    version: 0.001
+  File::Corresponding::File::Found:
+    file: lib/File/Corresponding/File/Found.pm
+  File::Corresponding::File::Profile:
+    file: lib/File/Corresponding/File/Profile.pm
+  File::Corresponding::Group:
+    file: lib/File/Corresponding/Group.pm
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
