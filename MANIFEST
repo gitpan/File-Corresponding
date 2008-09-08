@@ -1,8 +1,8 @@
 bin/corresponding_file
 Build.PL
 Changes
-lib/Config/Find.pm
 lib/File/Corresponding.pm
+lib/File/Corresponding/Config/Find.pm
 lib/File/Corresponding/File/Found.pm
 lib/File/Corresponding/File/Profile.pm
 lib/File/Corresponding/Group.pm
@@ -32,9 +32,9 @@ t/data/example/Controller/Book.pm
 t/data/example/Controller/Borrower.pm
 t/data/example/Model/Schema/Book.pm
 t/data/example/Model/Schema/Borrower.pm
-t/data/example/root/templates/Book.t
-t/data/example/root/templates/Borrower.t
-t/data/example/t/controller-book.t
-t/data/example/t/controller-borrower.t
-t/data/example/t/model-schema-book.t
-t/data/example/t/model-schema-borrower.t
+t/data/example/root/templates/Book.tt
+t/data/example/root/templates/Borrower.tt
+t/data/example/t/controller-book.test
+t/data/example/t/controller-borrower.test
+t/data/example/t/model-schema-book.test
+t/data/example/t/model-schema-borrower.test

@@ -12,7 +12,7 @@ use lib "lib";
 
 
 
-use_ok("Config::Find");
+use_ok("File::Corresponding::Config::Find");
 
 
 
@@ -21,12 +21,12 @@ diag("user_config");
     local $CWD = dir( dirname(__FILE__), "data" );
 
     is(
-        Config::Find->new()->user_config("Dude, no way there is a file name like this!"),
+        File::Corresponding::Config::Find->new()->user_config("Dude, no way there is a file name like this!"),
         undef,
         "Missing file name returned undef",
     );
     is(
-        Config::Find->new(preferred_dirs => [dir(".")])->user_config(
+        File::Corresponding::Config::Find->new(preferred_dirs => [dir(".")])->user_config(
             "Dude, no way there is a file name like this!"
         ),
         undef,
@@ -35,7 +35,7 @@ diag("user_config");
             
 
     is_deeply(
-        Config::Find->new(preferred_dirs => [dir(".")])->user_config(
+        File::Corresponding::Config::Find->new(preferred_dirs => [dir(".")])->user_config(
             "config/myapp.ini"
         ),
         my $found_config_file = file(".", "config/myapp.ini"),
@@ -44,7 +44,7 @@ diag("user_config");
     ok(-r $found_config_file, "  and it's readable");
 
     is_deeply(
-        Config::Find->new(preferred_dirs => [dir("config")])->user_config(
+        File::Corresponding::Config::Find->new(preferred_dirs => [dir("config")])->user_config(
             "myapp.ini"
         ),
         file("config", "myapp.ini"),

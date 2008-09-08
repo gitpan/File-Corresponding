@@ -1,6 +1,6 @@
 ---
 name: File-Corresponding
-version: 0.001
+version: 0.002
 author:
   - 'Johan Lindström <johanl[ÄT]DarSerMan.com>'
 abstract: Find corresponding files in the directory tree
@@ -12,6 +12,7 @@ requires:
   Data::Dumper: 0
   File::Basename: 0
   File::HomeDir: 0
+  File::chdir: 0
   Getopt::Long: 0
   List::MoreUtils: 0
   Moose: 0.57
@@ -24,11 +25,11 @@ requires:
   Test::More: 0
   YAML::Tiny: 0
 provides:
-  Config::Find:
-    file: lib/Config/Find.pm
   File::Corresponding:
     file: lib/File/Corresponding.pm
-    version: 0.001
+    version: 0.002
+  File::Corresponding::Config::Find:
+    file: lib/File/Corresponding/Config/Find.pm
   File::Corresponding::File::Found:
     file: lib/File/Corresponding/File/Found.pm
   File::Corresponding::File::Profile:

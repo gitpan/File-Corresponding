@@ -22,6 +22,7 @@ my $builder = Module::Build->new(
         'Test::Exception'            => 0,
         'Test::More'                 => 0,
         'File::HomeDir'              => 0,
+        'File::chdir'                => 0,
         'YAML::Tiny'                 => 0,
     },
     script_files => [

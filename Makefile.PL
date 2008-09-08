@@ -10,21 +10,22 @@ WriteMakefile
                          ],
           'VERSION_FROM' => 'lib/File/Corresponding.pm',
           'PREREQ_PM' => {
+                           'Pod::Usage' => 0,
+                           'File::chdir' => 0,
+                           'List::MoreUtils' => 0,
+                           'Moose' => '0.57',
                            'Getopt::Long' => 0,
                            'Test::Exception' => 0,
-                           'YAML::Tiny' => 0,
-                           'Pod::Usage' => 0,
                            'File::HomeDir' => 0,
+                           'YAML::Tiny' => 0,
                            'Data::Dumper' => 0,
                            'Moose::Autobox' => '0.08',
                            'Carp' => 0,
                            'Test::More' => 0,
-                           'Test::Differences' => 0,
                            'MooseX::Types::Path::Class' => 0,
+                           'Test::Differences' => 0,
                            'Path::Class' => '0.11',
-                           'File::Basename' => 0,
-                           'List::MoreUtils' => 0,
-                           'Moose' => '0.57'
+                           'File::Basename' => 0
                          }
         )
 ;

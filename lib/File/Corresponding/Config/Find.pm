@@ -1,22 +1,22 @@
 
 =head1 NAME
 
-Config::Find -- Locate config files (e.g. per user)
+File::Corresponding::Config::Find -- Locate config files (e.g. per user)
 
 
 =head1 SYNOPSIS
 
-  use Config::Find;
+  use File::Corresponding::Config::Find;
   my $my_config = ".myapp";
 
   #Find .myapp in any of the user's home directories
   my $myapp_config_in_home
-          = Config::Find->new()->user_config($my_config) or die;
+          = File::Corresponding::Config::Find->new()->user_config($my_config) or die;
 
   #Find .myapp in the current working directory, or in the user's home directory
   use Path::Class qw/ dir /;
   my $myapp_config_in_cwd_or_home
-          = Config::Find->new(preferred_dirs => [ dir(".") ])->user_config($my_config)
+          = File::Corresponding::Config::Find->new(preferred_dirs => [ dir(".") ])->user_config($my_config)
           or die;
 
 
@@ -28,9 +28,20 @@ the user's home directory (cross platform).
 First the preferred_dirs are searched, then the user's document
 directory, data directory, and home directory.
 
+=head1 COMMENT
+
+I searched for something like this, couldn't find anything.
+
+So I wrote this module, and named it Config::Find. Which is a name
+already taken by a CPAN module.
+
+D'oh!
+
+But now it's written, and it works, so it stays.
+
 =cut
 
-package Config::Find;
+package File::Corresponding::Config::Find;
 use Moose;
 
 

@@ -15,7 +15,7 @@ use File::Corresponding;
 use Moose::Autobox;
 use List::MoreUtils qw/ uniq /;
 
-use Config::Find;
+use File::Corresponding::Config::Find;
 use File::Corresponding;
 
 
@@ -31,7 +31,7 @@ Requires a .corresponding_file config file somewhere.
 
 See perldoc L<File::Corresponding>
 
-  corresponding_file FILENAME
+  corresponding_file [--CONFIG=file.yml] FILENAME
 
 =cut
 
@@ -41,9 +41,9 @@ main();
 sub main {
     my @rex_skip_source_file;
 
-    my $default_config_file = Config::Find->new(preferred_dirs => [ dir(".") ])->user_config(
-        ".corresponding_file",
-    );
+    my $default_config_file = File::Corresponding::Config::Find->new(
+        preferred_dirs => [ dir(".") ],
+    )->user_config(".corresponding_file");
     GetOptions(
         "config:s" => \(my $config_file = $default_config_file),
     );

@@ -50,7 +50,7 @@ has 'sprintf' => (is => 'ro', isa => 'Maybe[Str]');
 Regex matching a file. The first capture parens are used to extract
 the local file name.
 
-If coerced from a string, define as qw$regex, i.e. specify the
+If coerced from a string, define as qr$regex, i.e. specify the
 delimiters and any needed flags.
 
 =cut

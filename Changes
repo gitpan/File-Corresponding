@@ -6,7 +6,11 @@ Feature oriented Revision history for File-Corresponding
 0.002
 -----
 
-* 
+* Added deps
+
+* Renamed rouge Config::Find module (oops)
+
+* Lots of docs cleanup
 
 
 

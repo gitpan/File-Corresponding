@@ -8,8 +8,8 @@ File::Corresponding - Find corresponding files in the directory tree
 =head1 PREAMBLE
 
 In a source tree it is common to have files with the same name, but in
-different places in the directory tree. For a typical MVC application,
-an example could be:
+different places in the directory tree. A typical MVC application
+could look something like this:
 
  Controller/Book.pm
  Controller/Borrower.pm
@@ -28,10 +28,10 @@ C<t/model-schema-book.t> I<correspond> to each other; they represent
 different aspects of the same Book entity.
 
 Since the files belong to each other it is useful for the programmer
-to navigate between them, to deal with the various aspects of the
+to easily navigate between them, to deal with various aspects of a
 Book.
 
-
+This module helps with that.
 
 =head1 SYNOPSIS
 
@@ -47,11 +47,11 @@ your $HOME directory:
       file_profiles:
         -
           name: Cat Controller
-          regex: /Controller.(\w+)\.pm$/
+          regex: / Controller . (\w+) \.pm $ /x
           sprintf: Controller/%s.pm
         -
           name: DBIC Schema
-          regex: /Model.Schema.(\w+)\.pm$/
+          regex: "|Model/Schema.(\w+)\.pm$|"
           sprintf: Model/Schema/%s.pm
         -
           name: Template
@@ -96,7 +96,8 @@ C<File::Corresponding> uses a configuration of groups of File Profiles to
 identify corresponding files.
 
 Using a C<.corresponding_file> config file, and the command line
-script corresponding_file, you can easily look up corresponding files.
+script C<corresponding_file>, you can easily look up corresponding
+files.
 
 It's obviously better if you let your editor do the tedious bits for
 you, like passing the file name to the script, letting you choose
@@ -110,12 +111,17 @@ programmer, aren't you?).
 
 =head1 THE CONFIG FORMAT
 
-See the synopsis example.
+Study the SYNOPSIS example.
 
 A File Profile for e.g. "Controller" files includes a C<regex> to
 match a Controller file name with e.g. "Book" in it, and a C<sprintf>
 string template to render any found files with "Book" in them as a
 Controller file.
+
+Regex definitions are whatever comes after "qr" in
+e.g. C<qr/file.pm/i>, i.e. "/file.pm/i". As you can see, you can use
+regex modifiers, and even use other delimiters (which is handy, since
+you're likely to match "/").
 
 The C<regex> should match the intended file. The first capturing
 parenthesis must contain the entity file fragmen that is common to all
@@ -140,13 +146,6 @@ Johan Lindström, C<< <johanl[ÄT]DarSerMan.com> >>
 
 =head1 BUGS AND CAVEATS
 
-Currently C<File::Corresponding> supports the simple case in the
-DESCRIPTION above, where the Controller/Book.pm can easily be
-translated to Model/Schema/Book.pm. It does not yet support the more
-complicated translation from Controller/Book.pm to t/controller-book.t
-and back.
-
-
 =head2 BUG REPORTS
 
 Please report any bugs or feature requests to
@@ -157,6 +156,11 @@ your bug as I make changes.
 
 
 =head2 CAVEATS
+
+Currently C<File::Corresponding> supports the simple case in the
+SYNOPSIS above, where the Controller/Book.pm can easily be translated
+to Model/Schema/Book.pm. It does not yet support the more complicated
+translation from Controller/Book.pm to t/controller-book.t and back.
 
 
 =head2 KNOWN BUGS
@@ -183,7 +187,7 @@ Failures will result in a die.
 
 package File::Corresponding;
 use Moose;
-our $VERSION = 0.001;
+our $VERSION = 0.002;
 
 
 
