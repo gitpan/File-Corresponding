@@ -1,11 +1,9 @@
 
+
 =head1 NAME
 
-File::Corresponding::File::Found
-
-=head1 DESCRIPTION
-
-A file that was found in the file system, given a matching profile.
+File::Corresponding::File::Found - A file that was found in the file
+system, given a matching profile
 
 =cut
 

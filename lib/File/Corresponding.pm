@@ -11,27 +11,30 @@ In a source tree it is common to have files with the same name, but in
 different places in the directory tree. A typical MVC application
 could look something like this:
 
- Controller/Book.pm
- Controller/Borrower.pm
- Model/Schema/Book.pm
- Model/Schema/Borrower.pm
- root/templates/Book.t
- root/templates/Borrower.t
- t/controller-book.t
- t/controller-borrower.t
- t/model-schema-book.t
- t/model-schema-borrower.t
+ Book       lib/Controller/Book.pm
+ Borrower   lib/Controller/Borrower.pm
+ Book       lib/Model/Schema/Book.pm
+ Borrower   lib/Model/Schema/Borrower.pm
+ Book       lib/root/templates/Book.t
+ Borrower   lib/root/templates/Borrower.t
+ Book       lib/t/controller-book.t
+ Borrower   lib/t/controller-borrower.t
+ Book       lib/t/model-schema-book.t
+ Borrower   lib/t/model-schema-borrower.t
 
-Here C<Controller/Book.pm>, C<Model/Schema/Book.pm>,
+Here we clearly have two types of things; a Book and a Borrower.
+
+The C<Controller/Book.pm>, C<Model/Schema/Book.pm>,
 C<root/templates/Book.t>, C<t/controller-book.t>, and
-C<t/model-schema-book.t> I<correspond> to each other; they represent
-different aspects of the same Book entity.
+C<t/model-schema-book.t> represent different aspects of the same Book
+entity; they I<correspond> to each other.
 
 Since the files belong to each other it is useful for the programmer
-to easily navigate between them, to deal with various aspects of a
-Book.
+to easily navigate between them.
 
 This module helps with that.
+
+
 
 =head1 SYNOPSIS
 
@@ -187,7 +190,7 @@ Failures will result in a die.
 
 package File::Corresponding;
 use Moose;
-our $VERSION = 0.002;
+our $VERSION = 0.003;
 
 
 

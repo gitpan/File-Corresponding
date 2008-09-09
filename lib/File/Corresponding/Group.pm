@@ -1,7 +1,7 @@
 
 =head1 NAME
 
-File::Corresponding::Group
+File::Corresponding::Group - A group of File::Profile objects
 
 =head1 DESCRIPTION
 

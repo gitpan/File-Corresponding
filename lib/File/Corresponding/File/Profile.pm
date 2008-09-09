@@ -1,11 +1,8 @@
 
 =head1 NAME
 
-File::Corresponding::File::Profile
-
-=head1 DESCRIPTION
-
-The definition of what matches and translates to corresponding files.
+File::Corresponding::File::Profile - The definition of what matches
+and translates to corresponding files
 
 =cut
 

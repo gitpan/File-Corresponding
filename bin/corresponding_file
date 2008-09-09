@@ -27,7 +27,7 @@ corresponding_file -- Command line interface to L<File::Corresponding>
 
 =head1 SYNOPSIS
 
-Requires a .corresponding_file config file somewhere.
+Requires a C<.corresponding_file> config file somewhere.
 
 See perldoc L<File::Corresponding>
 
