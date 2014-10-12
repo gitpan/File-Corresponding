@@ -32,7 +32,7 @@ diag("user_config");
         undef,
         "Missing file name with cwd as preferred_dirs returned undef",
     );
-            
+
 
     is_deeply(
         File::Corresponding::Config::Find->new(preferred_dirs => [dir(".")])->user_config(
@@ -50,11 +50,10 @@ diag("user_config");
         file("config", "myapp.ini"),
         "Found file name with config as referred_dirs",
     );
-    
+
 
 }
 
 
 
 __END__
-

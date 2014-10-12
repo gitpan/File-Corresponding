@@ -9,6 +9,7 @@ system, given a matching profile
 
 use strict;
 package File::Corresponding::File::Found;
+$File::Corresponding::File::Found::VERSION = '0.004';
 use Moose;
 
 use Data::Dumper;

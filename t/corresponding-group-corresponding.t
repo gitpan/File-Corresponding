@@ -97,7 +97,7 @@ use File::Corresponding::File::Found;
                 file             => "corresponding/elsewhere/def/1.txt",
                 found_profile    => $profile_def,
                 matching_profile => $profile_abc,
-            }),            
+            }),
         ],
         "  testing 1.txt, finds one present",
     );
@@ -118,10 +118,9 @@ use File::Corresponding::File::Found;
         ],
         "  testing 2.txt, finds two present",
     );
-    
+
 
 
 }
 
 __END__
-

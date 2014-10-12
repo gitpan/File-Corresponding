@@ -63,7 +63,7 @@ use File::Corresponding::File::Found;
         }),
         "Create new group ok",
     );
-    
+
 
 
     my $corresponding_alpha = File::Corresponding->new({
@@ -88,7 +88,7 @@ use File::Corresponding::File::Found;
         "  testing 2.txt, finds two present in one group",
     );
 
-    
+
 
     my $corresponding_beta = File::Corresponding->new({
         name           => "beta",
@@ -100,7 +100,7 @@ use File::Corresponding::File::Found;
         [ $found_2_def, $found_2_ghi ],
         "  testing 2.txt, finds two present in two group (only found it in one)",
     );
-    
+
     eq_or_diff(
         $corresponding_beta->corresponding("corresponding/ghi/2.txt"),
         [
@@ -128,4 +128,3 @@ use File::Corresponding::File::Found;
 
 
 __END__
-

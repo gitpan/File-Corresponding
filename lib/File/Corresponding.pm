@@ -143,7 +143,7 @@ Only existing files are reported.
 
 =head1 AUTHOR
 
-Johan Lindström, C<< <johanl[ÄT]DarSerMan.com> >>
+Johan Lindstrom, C<< <johanl[AT]cpan.org> >>
 
 
 
@@ -171,7 +171,7 @@ translation from Controller/Book.pm to t/controller-book.t and back.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2007 Johan Lindström, All Rights Reserved.
+Copyright 2007- Johan Lindstrom, All Rights Reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
@@ -189,8 +189,8 @@ Failures will result in a die.
 =cut
 
 package File::Corresponding;
+$File::Corresponding::VERSION = '0.004';
 use Moose;
-our $VERSION = 0.003;
 
 
 
@@ -263,7 +263,7 @@ sub load_config_file {
         $file_groups->map( sub {
             my $group = $_;
             my $name = $group->{name} || "";
-            
+
             my $file_profiles = $group->{file_profiles} or $die->("file_profiles");
             my $profiles = $file_profiles->map( sub {
                 File::Corresponding::File::Profile->new($_),
@@ -275,7 +275,7 @@ sub load_config_file {
             });
         }),
     );
-    
+
 
     #print Dumper($config); use Data::Dumper;
 

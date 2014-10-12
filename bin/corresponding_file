@@ -1,5 +1,4 @@
 #!/usr/bin/perl -w
-use lib "c:/Dokument/Project/Dev/CPAN/File-Corresponding/trunk/source/lib";
 $|++;
 use strict;
 
@@ -71,7 +70,7 @@ sub syntax {
 
     my $error = "";
     $message and $error = "Error: $message\n";
-    
+
     die q{NAME - corresponding_file
 SYNOPSIS
 

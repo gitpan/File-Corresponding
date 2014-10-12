@@ -14,4 +14,3 @@ release.pl
 ^\.PerlySenseProject
 ^cover_db
 ^covered
-^.cvsignore

@@ -59,7 +59,7 @@ use_ok("File::Corresponding::File::Profile");
             }),
         ],
     );
-    
+
 }
 
 
